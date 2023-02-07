@@ -1,0 +1,40 @@
+NODE:
+-> É uma extensão do javascript que permite você realizar operações de BACK-END utilizando da própria linguagem javascript (ao invés de ter que aprender
+uma nova "própria" para o ambiente de back-end
+-> Dentro do node, podemos acessar o operating system, file system, etc
+-> NPM (node package manager) é o gerenciador de pacotes do node. Basicamente, com ele, teremos o controle organizacional do projeto e poderemos baixar
+bibliotecas de códigos javascript que ajudarão na construção do back-end de alguma aplicação
+  -> npm init -y
+-> NPX (node package executer) é o executador de pacotes do node. Caso tenhamos baixado alguma biblioteca, podemos executá-la/colocá-la em ação usando
+o *npx nomeDoPacote comando*
+
+EXPRESS:
+-> é um pacote do node relacionado a construção de aplicações web/requisições http
+  -> npm install express
+-> dentro da nossa aplicação, importamos o express e ativamos ele. a partir da ativação, associamos ele a uma porta web (para que a resposta do servidor
+seja enviada p/ essa porta e determinamos uma rota com o .get(), que irá guardar o que será enviado para essa porta (que será acessado por um cliente)
+->              const express = require('express');
+                const app = express();
+
+                app.get("/login", (req, res) => {
+                    res.send("Faça o login");
+                })
+
+                app.listen(8081, () => {console.log("servidor rodando na url http://localhost:8081)})
+
+DATABASE:
+-> nada mais é que um banco de dados: tabelas que guardam dados/informaçoes sobre aquela aplicação e seus usuários
+-> todo banco de dados, para ser acessado, precisa estar associado a uma porta web, isto é, um servidor do próprio banco.
+-> o acesso será feito atraves do gerenciador de banco de dados (software que irá moldar o banco: criar tabelas, adicionar dados etc).
+-> ou seja, sempre existirá a combinação entre ambos
+-> ex: postgresSQL -> postgres(servidor) e postico(gerenciador)
+-> todo banco SQL tem uma linguagem de programação própria que irá administrar as chamadas Querys ("ordens" para que o banco de dados realizem tal ação)
+
+SEQUELIZE:
+-> apesar de toda base de dados sql possuir uma linguagem propria do SQL, o Sequelize é uma alternativa javascript dessa linguagem (isto é, é um meio
+termo entre javascript e linguagem SQL
+  -> a utilidade do sequelize é não ter que aprender outra linguagem que não seja o próprio javascript para aplicar em toda a aplicação
+-> apesar, também, de podermos fazer tudo manualmente pelo gerenciador de banco de dados, para automatizarmos nossos registros no banco de dados (ou seja
+, ser um registro feito pelo proprio usuário e não pelo aplicador), usamos o sequelize associado a outros códigos javascript para realizar tais querys
+-> também podemos realizar, através do sequelize, as chamadas MIGRATIONS: comandos sequelize/javascript que moldam a estrutura da base de dados (criação
+de tabelas, colunas e fileiras, seus nomes, datatypes, etc). elas ajudam, também, a manter o registro de tudo que foi feito
