@@ -11,3 +11,6 @@ TERMINAL:
         -> nodemon server.js
         -> rs
   
+EXTRAS (TERMINAL)
+  -> npm install bcrypt (para criptografia de senhas)
+  -> npm install jsonwebtoken (para tokens de login)
