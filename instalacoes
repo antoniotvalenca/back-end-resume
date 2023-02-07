@@ -1,0 +1,13 @@
+INSTALAÇOES
+
+WEB:
+  -> banco de dados (servidor e gerenciador do banco)
+  -> node.js
+
+TERMINAL:
+  -> npm init -y (inicializando o node package manager)
+  -> npm install express pg pg-hstore sequelize dotenv (express, postgres e gerenciador postgres, sequelize, dotenv para guardar as credenciais do banco)
+  -> npm install nodemon (tipo um live server para codigos relacionados a requisicao http)
+        -> nodemon server.js
+        -> rs
+  
