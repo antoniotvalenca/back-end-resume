@@ -1,0 +1,18 @@
+1) baixar o servidor da base de dados e o gerenciador
+2) baixar os pacotes necessarios (ex: sequelize, etc)
+3) criar um arquivo .env e inserir as credenciais
+4) ir em config -> database.js e importar as credenciais do .env
+5) ir em database -> index.js e criar a conexão entre as credenciais guardadas no database.js
+
+6) criar um arquivo .sequelizerc e informar a este arquivo o caminho de onde ficará as migration e o caminho das credenciais da base no database.js
+7) criar o server.js/app.js onde se iniciará o express e será criada a porta de escuta das requisiçoes
+  -> dentro dele vai ter um require da pasta de database + os (futuros) routes, além do .listen
+8) ir criando migrations para moldar o banco de dados
+9) criar os models e modelar de acordo como a nossa aplicação irá se comunicar com a base de dados (em termos de registro de dados)
+10) em index.js importo esses models para fazer a conexão com a base
+
+11) criar os services e controllers (simultaneamente, mas de acordo com a funçao de cada no CRUD (se é store, update, index, show, delete, etc)
+12) criar os routes associados
+13) os middlewares se necessário e os schemas também
+14) importar os routes p/ server.js
+15) usar o insomnia para requisicoes http
