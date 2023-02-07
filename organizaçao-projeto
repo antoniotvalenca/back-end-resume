@@ -1,0 +1,54 @@
+ORGANIZAÇÃO GERAL:
+(ignorando node_modules, gitignore e packages.json)
+
+  SRC
+    -> CONFIG
+        -> database.js
+    -> CONTROLLERS
+        -> userController.js (...)
+    -> DATABASE
+        -> index.js 
+        -> migrations
+    -> MIDDLEWARES
+    -> MODELS
+        -> userModel.js (...)
+    -> ROUTES
+        -> userRoutes.js (...)
+    -> SCHEMA
+    -> SERVICES
+        -> userService.js (...)
+  .ENV
+  .SEQUELIZERC
+  server.js
+  
+    ___________________________  ___________________________  ___________________________  ___________________________  ___________________________ 
+  
+EXPLICAÇÃO GERAL:
+
+CONFIG
+  -> DATABASE.JS: guarda as credenciais do projeto que são importados do .env
+CONTROLLERS 
+  -> xCONTROLLER.JS: é responsável por intermediar as requisições enviadas pelo View (html/css) com as respostas fornecidas pelo Model (conector com o
+  banco de dados, trazendo informaçoes e enviando informaçoes), processando os dados que o usuário informou. em suma: vai guardar o processamento de
+  dados enviados pelo usuário e fornecerá uma resposta em combinação com o view
+DATABASE
+  -> INDEX.JS: vai fazer uma grande conexão geral entre models, base de dados, associações/relações entre tabelas, etc
+  -> MIGRATIONS: é criado automaticamente de acordo com os dados fornecidos no database.js/dotenv
+MIDDLEWARES
+  -> intermédio dos controllers. é uma operação que é realizada entre requisiçoes, tipo checar se o usuário está logado ao acessar tal página antes de
+  realmente dispor a resposta do servidor na tela do usuário
+MODELS
+  -> xMODEL.JS: fará a conexão com o banco de dados e a requisição do usuário (ou seja, fornecerá informações do banco mas também armazenará/alterará,
+  de acordo com o que for programado ou o que o usuário quiser registrar)
+ROUTES
+  -> xROUTES.JS: irá determinar a rota (de modo crú, o endereço/link) que o usuário terá que entrar para acessar tal info. EX: site.com/user
+SCHEMA
+  -> mais relacionado ao cumprimento de "normas" entre usuario vs banco (se ele está inserindo, por exemplo, no campo de email [ que sera registrado no
+  banco ] uma string com formato de email, ou se no campo de idade ele esta inserindo um numero etc
+SERVICES
+  -> irão acompanhar o funcionamento do controller, sendo a parte mais interna dele
+.ENV
+  -> guarda as credenciais do banco de dados que serão exportados para o database.js
+.SEQUELIZERC
+  -> da o caminho ao Sequelize a respeito das configs do banco de dados (onde esta o database.js) e onde ficará as migrations (uma vez conectado com o
+  banco, a pasta é auotmaticamente criada dentro da pasta database)
